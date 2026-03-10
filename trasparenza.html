@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Trasparenza — Il Patto della Città</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: black;
+            color: #f5f5f5;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo-trasparenza {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-trasparenza.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        /* Menu superiore */
+        .menu-superiore {
+            text-align: center;
+            margin-top: 2rem;
+            z-index: 10;
+            position: relative;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+
+        /* Contenitore */
+        .contenitore {
+            max-width: 900px;
+            margin: 4rem auto 3rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h1, h2 {
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.3rem;
+        }
+
+        .sottotitolo {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        ul {
+            margin-left: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .promessa {
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0.9;
+            border-left: 3px solid rgba(255,255,255,0.4);
+            padding-left: 1rem;
+        }
+
+        .torna-indice {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .torna-indice a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .torna-indice a:hover {
+            background: rgba(255,255,255,0.15);
+            text-shadow: 0 0 10px rgba(255,255,255,1);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo-trasparenza"></div>
+
+<!-- Menu superiore -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+<div class="contenitore">
+
+    <h1>Trasparenza</h1>
+    <div class="sottotitolo">
+        Il patto tra la città e chi la abita.
+    </div>
+
+    <section id="perche">
+        <h2>1. Perché esiste questo palazzo</h2>
+        <p>
+            La Trasparenza è il luogo dove la città parla con chiarezza. Non per
+            controllare, ma per rassicurare. Non per imporre, ma per spiegare.
+        </p>
+        <p>
+            È un patto semplice: nessuno deve sentirsi ingannato, manipolato o
+            osservato nell’ombra. La città è un porto sicuro, e un porto sicuro
+            vive di fiducia.
+        </p>
+    </section>
+
+    <section id="principi">
+        <h2>2. I principi fondamentali</h2>
+        <p>Questa città si regge su pochi principi, chiari e non negoziabili:</p>
+        <ul>
+            <li>Rispetto per ogni persona.</li>
+            <li>Dignità come valore centrale.</li>
+            <li>Ascolto senza giudizio.</li>
+            <li>Accoglienza per chi arriva.</li>
+            <li>Nessuna discriminazione.</li>
+            <li>Nessuna gerarchia tra gli abitanti.</li>
+            <li>Nessun algoritmo che decide al posto tuo.</li>
+            <li>Nessuna pressione a mostrarsi o parlare.</li>
+        </ul>
+    </section>
+
+    <section id="funzionamento">
+        <h2>3. Come funziona la città</h2>
+        <p>
+            La città non raccoglie ciò che non serve, non osserva ciò che non deve,
+            non usa ciò che non è stato offerto.
+        </p>
+        <p>
+            Le interazioni sono pubbliche come in una piazza vera: ciò che dici è
+            visibile, ciò che non vuoi dire resta tuo.
+        </p>
+    </section>
+
+    <section id="mai">
+        <h2>4. Cosa non troverai mai qui</h2>
+        <p>In questa città non esisteranno mai:</p>
+        <ul>
+            <li>Odio o violenza.</li>
+            <li>Manipolazione emotiva o psicologica.</li>
+            <li>Sfruttamento delle persone.</li>
+            <li>Raccolta nascosta di informazioni.</li>
+            <li>Pubblicità o pressioni commerciali.</li>
+            <li>Algoritmi che ti spingono dove non vuoi andare.</li>
+            <li>Gerarchie invisibili tra gli abitanti.</li>
+        </ul>
+    </section>
+
+    <section id="promessa">
+        <h2>5. La promessa della città</h2>
+        <p>
+            La Trasparenza non è vedere tutto.
+            È sapere che nulla è nascosto contro di te.
+        </p>
+        <div class="promessa">
+            Qui sei libero.<br>
+            Qui sei rispettato.<br>
+            Qui sei al sicuro.
+        </div>
+    </section>
+
+    <div class="torna-indice">
+        <a href="index.html">Torna alla Piazza</a>
+    </div>
+
+</div>
+
+</body>
+</html>

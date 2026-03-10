@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Conoscenza — L’esperienza umana fino a oggi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stile generale della città -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            color: #f5f5f5;
+            background: black;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-conoscenza.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        .contenitore {
+            max-width: 900px;
+            margin: 3rem auto 4rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h1, h2 {
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.3rem;
+            font-size: 2.2rem;
+        }
+
+        .sottotitolo {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .domanda {
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0.9;
+            border-left: 3px solid rgba(255,255,255,0.4);
+            padding-left: 1rem;
+        }
+
+        /* Navigazione */
+        .menu-superiore {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+
+        /* Torna */
+        .torna-indice {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .torna-indice a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .torna-indice a:hover {
+            background: rgba(255,255,255,0.15);
+            text-shadow: 0 0 10px rgba(255,255,255,1);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<div class="contenitore">
+
+    <!-- Navigazione della città -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+    <h1>Conoscenza</h1>
+    <div class="sottotitolo">
+        L’esperienza umana dalle origini all’era digitale.
+    </div>
+
+    <section id="fuoco">
+        <h2>1. La Sala del Fuoco — Le origini dell’uomo</h2>
+        <p>
+            L’umanità nasce attorno a un fuoco...
+        </p>
+        <p>
+            È qui che nasce il linguaggio...
+        </p>
+        <p>
+            L’uomo scopre che da solo non può farcela...
+        </p>
+        <div class="domanda">
+            Quando abbiamo smesso di ascoltarci come tribù?
+        </div>
+    </section>
+
+    <section id="pietre">
+        <h2>2. La Sala delle Pietre — Le prime civiltà</h2>
+        <p>
+            Con l’agricoltura nasce la stabilità...
+        </p>
+        <p>
+            La conoscenza si fissa sulla pietra...
+        </p>
+        <p>
+            L’uomo impara a creare, ma anche a separare...
+        </p>
+        <div class="domanda">
+            Abbiamo costruito città… ma abbiamo costruito anche ponti tra di noi?
+        </div>
+    </section>
+
+    <section id="idee">
+        <h2>3. La Sala delle Idee — Il mondo moderno</h2>
+        <p>
+            Con la scienza e la filosofia, l’uomo inizia a interrogarsi...
+        </p>
+        <p>
+            Ma il progresso porta anche conflitti...
+        </p>
+        <p>
+            È un’epoca di grandi conquiste e grandi errori...
+        </p>
+        <div class="domanda">
+            Abbiamo imparato a ragionare… ma abbiamo imparato a non ripetere gli stessi errori?
+        </div>
+    </section>
+
+    <section id="digitale">
+        <h2>4. La Sala della Connessione — L’era digitale</h2>
+        <p>
+            Internet cambia tutto...
+        </p>
+        <p>
+            Ma la connessione porta anche nuove solitudini...
+        </p>
+        <p>
+            L’intelligenza artificiale apre possibilità immense...
+        </p>
+        <div class="domanda">
+            Stiamo usando la tecnologia per avvicinarci… o per nasconderci?
+        </div>
+    </section>
+
+    <div class="torna-indice">
+        <a href="piazza-pubblica.html">Torna alla Piazza Pubblica</a>
+    </div>
+
+</div>
+
+</body>
+</html>

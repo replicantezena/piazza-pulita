@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>La tua Stanza — La Piazza Pulita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: black;
+            color: #f5f5f5;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo-stanza {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-stanza.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        /* Menu superiore */
+        .menu-superiore {
+            text-align: center;
+            margin-top: 2rem;
+            z-index: 10;
+            position: relative;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+
+        /* Contenitore */
+        .modifica-box {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px black;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.8rem;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        label {
+            margin-top: 1.2rem;
+            display: block;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        button {
+            margin-top: 2rem;
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .nota {
+            margin-top: 1.5rem;
+            text-align: center;
+            opacity: 0.85;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body class="stanza-body">
+
+<div class="sfondo-stanza"></div>
+
+<!-- Menu superiore -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+<div class="modifica-box">
+
+    <h2>Personalizza la tua Stanza</h2>
+
+    <!-- Versione estetica, senza PHP -->
+    <form>
+
+        <input type="text" name="nome_stanza" placeholder="Nome della stanza">
+
+        <textarea name="frase" placeholder="Una frase che ti rappresenta"></textarea>
+
+        <label>Sfondo (immagine):</label>
+        <input type="file" name="sfondo">
+
+        <label>Colore dominante:</label>
+        <input type="color" name="colore">
+
+        <label>Simbolo:</label>
+        <select name="simbolo">
+            <option value="lanterna">Lanterna</option>
+            <option value="stella">Stella</option>
+            <option value="onda">Onda</option>
+            <option value="chiave">Chiave</option>
+        </select>
+
+        <button type="button">Salva (non attivo)</button>
+
+    </form>
+
+    <p class="nota">
+        La tua stanza è il tuo porto.<br>
+        Qui puoi renderla come vuoi.
+    </p>
+
+</div>
+
+</body>
+</html>

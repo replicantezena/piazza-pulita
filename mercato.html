@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Mercato — La Piazza Pulita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: black;
+            color: #f5f5f5;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-mercato.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        .menu-superiore {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+
+        .contenitore {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            text-shadow: 0 0 10px black;
+        }
+
+        .mercato-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .oggetto {
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 1rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .oggetto img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+        }
+
+        .titolo-oggetto {
+            font-weight: bold;
+            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+        }
+
+        .descrizione {
+            opacity: 0.9;
+            margin-bottom: 0.6rem;
+        }
+
+        .prezzo {
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .contatta {
+            display: block;
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contatta:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .aggiungi-box {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .aggiungi-box input, .aggiungi-box textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 0.6rem;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+        }
+
+        .aggiungi-box button {
+            margin-top: 1rem;
+            padding: 0.7rem 1.4rem;
+            background: rgba(255,255,255,0.25);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .aggiungi-box button:hover {
+            background: rgba(255,255,255,0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+<div class="contenitore">
+
+    <h1>Mercato della Città</h1>
+
+    <div class="mercato-grid" id="mercato">
+        <!-- Gli oggetti appariranno qui -->
+    </div>
+
+    <div class="aggiungi-box">
+        <h3>Aggiungi un oggetto</h3>
+
+        <input type="text" id="titolo" placeholder="Nome dell’oggetto">
+        <textarea id="descrizione" placeholder="Descrizione"></textarea>
+        <input type="text" id="prezzo" placeholder="Prezzo o 'Scambio'">
+        <input type="file" id="immagine" accept="image/*">
+
+        <button onclick="aggiungiOggetto()">Pubblica</button>
+    </div>
+
+</div>
+
+<script>
+function aggiungiOggetto() {
+    const titolo = document.getElementById("titolo").value.trim();
+    const descrizione = document.getElementById("descrizione").value.trim();
+    const prezzo = document.getElementById("prezzo").value.trim();
+    const file = document.getElementById("immagine").files[0];
+
+    if (!titolo || !descrizione || !prezzo || !file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const div = document.createElement("div");
+        div.classList.add("oggetto");
+
+        div.innerHTML = `
+            <img src="${e.target.result}">
+            <div class="titolo-oggetto">${titolo}</div>
+            <div class="descrizione">${descrizione}</div>
+            <div class="prezzo">${prezzo}</div>
+            <a class="contatta" href="stanza.html">Contatta</a>
+        `;
+
+        document.getElementById("mercato").prepend(div);
+    };
+
+    reader.readAsDataURL(file);
+
+    document.getElementById("titolo").value = "";
+    document.getElementById("descrizione").value = "";
+    document.getElementById("prezzo").value = "";
+    document.getElementById("immagine").value = "";
+}
+</script>
+
+</body>
+</html>

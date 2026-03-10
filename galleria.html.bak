@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Galleria — Condivisioni della Città</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: black;
+            color: #f5f5f5;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-galleria.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        .contenitore {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.3rem;
+            font-size: 2.2rem;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .sottotitolo {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Upload */
+        .upload-box {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px dashed rgba(255,255,255,0.4);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .upload-box input[type="file"] {
+            margin-top: 1rem;
+        }
+
+        .pensiero-box {
+            margin-top: 1.5rem;
+        }
+
+        .pensiero-box textarea {
+            width: 100%;
+            height: 80px;
+            padding: 0.6rem;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            resize: none;
+        }
+
+        .pensiero-box button {
+            margin-top: 0.6rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Galleria */
+        .galleria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .elemento {
+            background: rgba(255,255,255,0.08);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+        }
+
+        .elemento img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+        }
+
+        .pensiero {
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .commenti {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .commenti input {
+            width: 100%;
+            padding: 0.4rem;
+            margin-top: 0.4rem;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+        }
+
+        /* Menu superiore */
+        .menu-superiore {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<div class="contenitore">
+
+    <!-- Navigazione -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+    <h1>Galleria</h1>
+    <div class="sottotitolo">
+        Qui gli abitanti condividono ciò che vedono e ciò che sentono.
+    </div>
+
+    <!-- Upload -->
+    <div class="upload-box">
+        <p>Carica un’immagine oppure condividi un pensiero.</p>
+
+        <input type="file" id="upload" accept="image/*">
+
+        <div class="pensiero-box">
+            <textarea id="pensiero" placeholder="Cosa stai pensando?"></textarea>
+            <button onclick="pubblicaPensiero()">Pubblica</button>
+        </div>
+    </div>
+
+    <!-- Galleria -->
+    <div class="galleria" id="galleria">
+        <!-- Gli elementi caricati appariranno qui -->
+    </div>
+
+</div>
+
+<script>
+    const upload = document.getElementById("upload");
+    const galleria = document.getElementById("galleria");
+
+    upload.addEventListener("change", function() {
+        const file = this.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            creaElemento(`<img src="${e.target.result}">`);
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    function pubblicaPensiero() {
+        const testo = document.getElementById("pensiero").value.trim();
+        if (!testo) return;
+
+        creaElemento(`<div class="pensiero">“${testo}”</div>`);
+        document.getElementById("pensiero").value = "";
+    }
+
+    function creaElemento(contenuto) {
+        const div = document.createElement("div");
+        div.classList.add("elemento");
+
+        div.innerHTML = `
+            ${contenuto}
+            <div class="commenti">
+                <strong>Commenti:</strong>
+                <div class="lista-commenti"></div>
+                <input type="text" placeholder="Scrivi un commento..." onkeypress="aggiungiCommento(event, this)">
+            </div>
+        `;
+
+        galleria.prepend(div);
+    }
+
+    function aggiungiCommento(event, input) {
+        if (event.key !== "Enter") return;
+
+        const testo = input.value.trim();
+        if (!testo) return;
+
+        const lista = input.parentElement.querySelector(".lista-commenti");
+        const p = document.createElement("p");
+        p.textContent = testo;
+        lista.appendChild(p);
+
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>

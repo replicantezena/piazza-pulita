@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Piazza — La Piazza Pulita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stile principale -->
+    <link rel="stylesheet" href="css/piazza.css">
+
+    <style>
+        /* Menu superiore */
+        .menu-superiore {
+            position: absolute;
+            top: 1.5rem;
+            width: 100%;
+            text-align: center;
+            z-index: 20;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.8rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.85;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 10px white;
+        }
+
+        /* Frase poetica */
+        .frase-nebbia {
+            position: absolute;
+            bottom: 6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            color: #eee;
+            font-style: italic;
+            font-size: 1.3rem;
+            opacity: 0.9;
+            text-shadow: 0 0 12px black;
+            line-height: 1.6;
+            z-index: 30;
+        }
+
+        /* Pulsante Entra */
+        .entra-piazza {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 40;
+        }
+
+        .entra-piazza a {
+            padding: 0.8rem 1.6rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .entra-piazza a:hover {
+            background: rgba(255,255,255,0.3);
+            text-shadow: 0 0 10px white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sfondo -->
+    <div class="sfondo"></div>
+
+    <!-- Frase poetica -->
+    <div class="frase-nebbia">
+        La nebbia è il riflesso della terra ma anche il gas di altri pianeti.<br>
+        Immagina di essere nessuno ma presenza… presenza in uno stato possibile.
+    </div>
+
+    <!-- Menu superiore -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+    <!-- Pulsante Entra (ORA CORRETTO) -->
+    <div class="entra-piazza">
+        <a href="register.html">Entra</a>
+    </div>
+
+    <!-- JS -->
+    <script src="js/piazza.js"></script>
+
+</body>
+</html>

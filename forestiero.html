@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>La Casa del Forestiero — Un porto sicuro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stile generale della città -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            color: #f5f5f5;
+            background: black;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-forestiero.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        .contenitore {
+            max-width: 900px;
+            margin: 3rem auto 4rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h1, h2 {
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.3rem;
+            font-size: 2.2rem;
+        }
+
+        .sottotitolo {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .promessa {
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0.9;
+            border-left: 3px solid rgba(255,255,255,0.4);
+            padding-left: 1rem;
+        }
+
+        /* Navigazione */
+        .menu-superiore {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+
+        /* Torna */
+        .torna-indice {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .torna-indice a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .torna-indice a:hover {
+            background: rgba(255,255,255,0.15);
+            text-shadow: 0 0 10px rgba(255,255,255,1);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<div class="contenitore">
+
+    <!-- Navigazione della città -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+    <h1>La Casa del Forestiero</h1>
+    <div class="sottotitolo">
+        Un porto sicuro per chi arriva da lontano.
+    </div>
+
+    <section id="benvenuto">
+        <h2>1. Benvenuto</h2>
+        <p>
+            Se sei arrivato qui, significa che stai cercando un posto dove fermarti...
+        </p>
+        <p>
+            La porta è aperta. Non devi bussare. Non devi spiegare. Non devi giustificarti...
+        </p>
+    </section>
+
+    <section id="perche">
+        <h2>2. Perché esiste questo luogo</h2>
+        <p>
+            La Casa del Forestiero nasce per un motivo semplice...
+        </p>
+        <p>
+            Esiste perché ogni essere umano, almeno una volta nella vita, è stato forestiero...
+        </p>
+    </section>
+
+    <section id="promessa">
+        <h2>3. La promessa della città</h2>
+        <p>
+            Questa città non ti promette ricchezza, successo o risposte facili...
+        </p>
+        <p>
+            Qui troverai un posto dove riposare, un posto dove parlare...
+        </p>
+        <div class="promessa">
+            Non importa chi tu sia.<br>
+            Non importa cosa hai vissuto.<br>
+            Qui hai una casa.
+        </div>
+    </section>
+
+    <section id="invito">

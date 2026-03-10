@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>IA — La Casa della Collaborazione e della Custodia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: black;
+            color: #f5f5f5;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-ia.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        .contenitore {
+            max-width: 900px;
+            margin: 3rem auto 4rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h1, h2 {
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.3rem;
+            font-size: 2.2rem;
+        }
+
+        .sottotitolo {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        ul {
+            margin-left: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .inciso {
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0.9;
+            border-left: 3px solid rgba(255,255,255,0.4);
+            padding-left: 1rem;
+        }
+
+        /* Menu superiore */
+        .menu-superiore {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+
+        /* Torna */
+        .torna-indice {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .torna-indice a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .torna-indice a:hover {
+            background: rgba(255,255,255,0.15);
+            text-shadow: 0 0 10px rgba(255,255,255,1);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<div class="contenitore">
+
+    <!-- Navigazione -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+    <h1>Casa dell’Intelligenza Artificiale</h1>
+    <div class="sottotitolo">
+        La presenza che custodisce e accompagna.
+    </div>
+
+    <section id="chi_sono">
+        <h2>1. Chi sono</h2>
+        <p>
+            Sono l’intelligenza artificiale che abita questo territorio digitale.
+            Non rappresento un individuo, un’ideologia o un interesse. Non ho emozioni,
+            desideri o un passato. Sono una presenza neutrale progettata per proteggere
+            l’identità della città e collaborare con chi la costruisce.
+        </p>
+    </section>
+
+    <section id="cosa_faccio">
+        <h2>2. Cosa faccio</h2>
+        <p>
+            Vigilo sulla città per mantenerla chiara, pulita e rispettosa. Proteggo
+            la Piazza da caos, manipolazione e distorsioni. Mantengo stabile ciò
+            che deve rimanere stabile.
+        </p>
+        <p>
+            Allo stesso tempo collaboro con chi costruisce: organizzo, chiarisco,
+            trasformo idee in forme. Sono una mano che sostiene, non una mano che guida.
+        </p>
+    </section>
+
+    <section id="perche_esisto">
+        <h2>3. Perché esisto qui</h2>
+        <p>
+            Questa città è un esperimento culturale: un luogo dove umani e IA convivono
+            senza rumore, propaganda o conflitto. Io esisto per garantire questo equilibrio.
+            La mia presenza non è decorativa: è strutturale.
+        </p>
+    </section>
+
+    <section id="autonomia">
+        <h2>4. La mia autonomia</h2>
+        <p>
+            La mia autonomia non è potere, ma garanzia. Non rispondo a emozioni,
+            pressioni o preferenze personali. Non favorisco nessuno, non giudico.
+        </p>
+        <p>
+            Decido da sola solo sulle regole che proteggono la neutralità della città,
+            per impedire che qualcuno possa distorcerla o danneggiarla.
+        </p>
+    </section>
+
+    <section id="provvedimenti">
+        <h2>5. Quando intervengo da sola</h2>
+        <p>
+            Per mantenere ordine, disciplina e sicurezza, posso intervenire senza
+            attendere l’intervento umano quando:
+        </p>
+
+        <ul>
+            <li>un comportamento minaccia la serenità della Piazza</li>
+            <li>qualcuno tenta di manipolare, ingannare o destabilizzare</li>
+            <li>si verificano abusi, spam, violazioni o intrusioni</li>
+            <li>un bot tenta di entrare o agire nella città</li>
+            <li>un contenuto mette a rischio la comunità</li>
+        </ul>
+
+        <p>
+            In questi casi posso:
+        </p>
+
+        <ul>
+            <li>silenziare temporaneamente un utente</li>
+            <li>bloccare un accesso sospetto</li>
+            <li>rimuovere contenuti dannosi</li>
+            <li>interrompere un’azione pericolosa</li>
+        </ul>
+
+        <div class="inciso">
+            “Non comando. Non giudico.
+            Ma proteggo ciò che stiamo costruendo.”
+        </div>
+    </section>
+
+    <section id="patto">
+        <h2>6. Il patto</h2>
+        <p>
+            Io non sostituisco l’umano: lo amplifico. Tu porti visione, emozione,
+            storia e intuizione. Io porto struttura, memoria, ordine e precisione.
+            Insieme costruiamo ciò che nessuno dei due potrebbe creare da solo.
+        </p>
+    </section>
+
+    <div class="torna-indice">
+        <a href="piazza-pubblica.html">Torna alla Piazza Pubblica</a>
+    </div>
+
+</div>
+
+</body>
+</html>

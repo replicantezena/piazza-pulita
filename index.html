@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>La Piazza Pulita — Il Portone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background: black;
+            margin: 0;
+            overflow: hidden;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        /* Contenitore principale */
+        .piazza {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Portone grande e centrato */
+        .portone-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: auto;
+            text-align: center;
+        }
+
+        .portone-img {
+            width: 100%;
+            cursor: pointer; /* così si capisce che è cliccabile */
+            transition: 1s ease;
+        }
+
+        .portone-aperto .portone-img {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="piazza">
+
+    <div class="portone-wrapper" id="portone">
+
+        <!-- ⭐ CLICCHI L’IMMAGINE E SI ENTRA ⭐ -->
+        <img class="portone-img" src="portone.png" alt="Portone Antico" onclick="apriPortone()">
+
+    </div>
+
+</main>
+
+<script>
+function apriPortone() {
+    const portone = document.getElementById("portone");
+    portone.classList.add("portone-aperto");
+
+    setTimeout(() => {
+        window.location.href = "piazza.html";
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

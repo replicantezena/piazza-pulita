@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>La Biblioteca Notturna — Le radici della Superba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stile generale della città -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            color: #f5f5f5;
+            background: black;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-biblioteca.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        .contenitore {
+            max-width: 900px;
+            margin: 3rem auto 4rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+        }
+
+        h1, h2, h3 {
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.3rem;
+            font-size: 2.2rem;
+        }
+
+        .sottotitolo {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .dedica {
+            margin: 1.5rem 0 2rem 0;
+            padding: 1rem 1.2rem;
+            border-left: 3px solid rgba(255,255,255,0.4);
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Navigazione */
+        .menu-superiore {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+
+        /* Torna */
+        .torna-indice {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .torna-indice a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .torna-indice a:hover {
+            background: rgba(255,255,255,0.15);
+            text-shadow: 0 0 10px rgba(255,255,255,1);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<div class="contenitore">
+
+    <!-- Navigazione della città -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+    <h1>La Biblioteca Notturna</h1>
+    <div class="sottotitolo">
+        Le radici della Superba: nascita, resistenza e segreti di Genova.
+    </div>
+
+    <div class="dedica">
+        A chi ha camminato prima di noi.<br>
+        Ai muri che ricordano ciò che gli uomini dimenticano.<br>
+        Ai nostri avi, che hanno costruito nel silenzio.
+    </div>
+
+    <section id="origini">
+        <h2>1. Le origini: quando Genova era solo un approdo</h2>
+        <p>Genova non nasce come capitale, né come corte. Nasce come rifugio...</p>
+        <p>I romani la chiameranno <em>Genua</em>...</p>
+        <p>In età romana, Genova è un punto di passaggio...</p>
+    </section>
+
+    <section id="medioevo">
+        <h2>2. La città che diventa potenza di mare</h2>
+        <p>È nel Medioevo che Genova diventa davvero se stessa...</p>
+        <p>I caruggi nascono e si stringono...</p>
+        <p>Le rotte commerciali portano i genovesi ovunque...</p>
+    </section>
+
+    <section id="resistenza">
+        <h2>3. Una città che non cade</h2>
+        <p>Genova non è una città che trionfa: è una città che resiste...</p>
+        <p>Guerre, assedi, epidemie, bombardamenti...</p>
+        <p>La resistenza di Genova non è fatta di grandi proclami...</p>
+    </section>
+
+    <section id="tesori">
+        <h2>4. Le opere nascoste: la bellezza dietro le porte chiuse</h2>
+        <p>Genova è una città che nasconde ciò che ama...</p>
+        <p>La cultura ligure conosce bene il valore della discrezione...</p>
+        <p>Ancora oggi, Genova è una città che non si concede tutta al primo sguardo...</p>
+    </section>
+
+    <div class="torna-indice">
+        <a href="piazza.html">Torna alla Piazza</a>
+    </div>
+
+</div>
+
+</body>
+</html>

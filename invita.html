@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Invita qualcuno — La Piazza Pulita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: black;
+            color: #f5f5f5;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-invito.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        .contenitore {
+            max-width: 700px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px black;
+        }
+
+        p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        button, .btn {
+            padding: 0.8rem 1.6rem;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover, .btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        #link-invito {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            min-height: 40px;
+            font-style: italic;
+            opacity: 0.9;
+            word-break: break-all;
+        }
+
+        .share-buttons {
+            margin-top: 1.5rem;
+        }
+
+        .share-buttons a {
+            margin: 0.3rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .share-buttons a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<div class="contenitore">
+
+    <h2>Invita una persona</h2>
+
+    <p>
+        Genera un link unico da condividere con chi vuoi far entrare nella città.<br>
+        Ogni invito è una porta che si apre una sola volta.
+    </p>
+
+    <form action="genera-invito.php" method="POST">
+        <button type="submit">Genera invito</button>
+    </form>
+
+    <div id="link-invito">
+        <!-- Il link comparirà qui -->
+    </div>
+
+    <div class="share-buttons" id="share-area" style="display:none;">
+        <a id="wa" target="_blank">WhatsApp</a>
+        <a id="tg" target="_blank">Telegram</a>
+        <a id="fb" target="_blank">Facebook</a>
+        <a id="x" target="_blank">X</a>
+    </div>
+
+    <a href="stanza.html" class="btn">Torna alla tua stanza</a>
+
+</div>
+
+<script>
+    // Questo script si attiva quando genera-invito.php restituisce il link
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("link")) {
+        const link = decodeURIComponent(params.get("link"));
+        document.getElementById("link-invito").textContent = link;
+
+        const share = document.getElementById("share-area");
+        share.style.display = "block";
+
+        document.getElementById("wa").href = "https://wa.me/?text=" + encodeURIComponent(link);
+        document.getElementById("tg").href = "https://t.me/share/url?url=" + encodeURIComponent(link);
+        document.getElementById("fb").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(link);
+        document.getElementById("x").href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(link);
+    }
+</script>
+
+</body>
+</html>

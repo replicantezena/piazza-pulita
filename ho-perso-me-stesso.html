@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ho perso me stesso — La Piazza Pulita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stile generale -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: black;
+            color: #f5f5f5;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .sfondo {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('img/nebbia-smarrimento.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        section {
+            width: 90%;
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 14px;
+            color: white;
+            text-shadow: 0 0 10px black;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        a.scelta {
+            display: block;
+            margin: 1.5rem auto;
+            padding: 1rem;
+            width: 80%;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            backdrop-filter: blur(4px);
+            transition: 0.3s;
+        }
+
+        a.scelta:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        a.torna {
+            display: block;
+            margin-top: 2rem;
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .menu-superiore {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .menu-superiore a {
+            margin: 0 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .menu-superiore a:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255,255,255,0.9);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sfondo"></div>
+
+<!-- Menu superiore -->
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
+
+<section>
+    <h1>Ho perso me stesso</h1>
+
+    <p>
+        Succede.<br>
+        A volte ci si smarrisce.<br>
+        Qui puoi ritrovare la strada.
+    </p>
+
+    <a class="scelta" href="recupera-password.html">Ho perso la password</a>
+    <a class="scelta" href="recupera-email.html">Ho perso l’email</a>
+
+    <a class="torna" href="piazza.html">← Torna alla Piazza</a>
+</section>
+
+</body>
+</html>

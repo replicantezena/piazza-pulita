@@ -1,0 +1,182 @@
+/* Impostazioni base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    font-family: "Cormorant Garamond", serif;
+    color: #f5f5f5;
+}
+
+/* Nebbia del teatro */
+.teatro-sfondo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../img/nebbia-teatro.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+/* Menu superiore */
+.menu-superiore {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-superiore a {
+    margin: 0 0.6rem;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.menu-superiore a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+
+/* Contenitore principale */
+.teatro-contenitore {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    box-shadow: 0 0 24px rgba(0,0,0,0.7);
+}
+
+/* Titolo */
+.teatro-contenitore h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.6rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.sottotitolo-teatro {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Area palco */
+.palco {
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.8rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 14px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+}
+
+/* Testo del monologo / performance */
+.testo-palco {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    white-space: pre-line;
+}
+
+/* Reazioni del pubblico */
+.reazioni-teatro {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.reazioni-teatro span {
+    margin: 0 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+    font-size: 1.4rem;
+}
+
+.reazioni-teatro span:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+
+/* Area per scrivere un nuovo monologo */
+.nuovo-monologo {
+    margin-top: 2rem;
+}
+
+textarea {
+    width: 100%;
+    height: 140px;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: "Cormorant Garamond", serif;
+    transition: 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.5);
+}
+
+/* Pulsante invia */
+button {
+    margin-top: 1rem;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 12px rgba(255,255,255,0.3);
+}
+
+/* Pulsante torna */
+.torna-indice {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.torna-indice a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.torna-indice a:hover {
+    background: rgba(255,255,255,0.15);
+    text-shadow: 0 0 10px rgba(255,255,255,1);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .teatro-contenitore {
+        margin: 3rem 1rem;
+        padding: 1.8rem;
+    }
+
+    .testo-palco {
+        font-size: 1.05rem;
+    }
+}

@@ -1,0 +1,199 @@
+/* SFONDO CREPUSCOLARE */
+.index-body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top,
+                                #6b4e2e 0%,
+                                #3a2a1d 40%,
+                                #120e0b 100%);
+                                color: #f3e9dd;
+                                font-family: "Cormorant Garamond", serif;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+}
+
+/* LANERNA */
+.lanterna {
+    position: fixed;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle,
+                                rgba(255,244,214,0.95) 0%,
+                                rgba(255,244,214,0.25) 45%,
+                                transparent 75%);
+    pointer-events: none;
+    filter: blur(2px);
+    opacity: 0.9;
+}
+
+/* CONTENITORE PIAZZA */
+.piazza {
+    max-width: 900px;
+    padding: 3rem 2rem 4rem;
+    text-align: center;
+}
+
+/* TITOLO */
+.titolo-citta {
+    font-family: "Great Vibes", cursive;
+    font-size: 4rem;
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.08em;
+    color: #f7eedd;
+    text-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+
+.sottotitolo {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* INVITO */
+.invito {
+    margin-top: 2.5rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* BOTTEGHE / VARCHI */
+.varchi {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.varco {
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(243,233,221,0.5);
+    color: #f3e9dd;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(10,8,7,0.55);
+    box-shadow: 0 0 12px rgba(0,0,0,0.7);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.varco:hover {
+    background: rgba(243,233,221,0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0,0,0,0.9);
+}
+
+/* PROMESSA */
+.promessa {
+    margin-top: 3.5rem;
+    padding: 1.8rem 1.4rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-style: italic;
+    opacity: 0.9;
+    border-left: 2px solid rgba(243,233,221,0.4);
+    border-right: 2px solid rgba(243,233,221,0.4);
+    background: linear-gradient(to bottom,
+                                rgba(20,17,15,0.6),
+                                rgba(10,8,7,0.85));
+    box-shadow: 0 0 18px rgba(0,0,0,0.8);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .titolo-citta {
+        font-size: 3rem;
+    }
+    .invito {
+        font-size: 1rem;
+    }
+    .promessa {
+        font-size: 0.95rem;
+    }
+}
+/* --- SCRITTA ENTRA SUL PORTONE --- */
+.entra-portone {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    color: #f3e9dd;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.entra-portone:hover {
+    opacity: 0.7;
+}
+
+/* --- ANIMAZIONE APERTURA PORTONE --- */
+.portone-aperto {
+    animation: apriPortone 1s forwards ease-out;
+}
+
+@keyframes apriPortone {
+    0% { transform: scale(1) translateY(0); opacity: 1; }
+    100% { transform: scale(1.2) translateY(-40px); opacity: 0; }
+}
+/* --- RIDUZIONE PORTONE --- */
+.portone-wrapper {
+    max-width: 380px;   /* riduce la larghezza */
+    margin: 0 auto;     /* lo centra */
+    position: relative;
+}
+
+/* L'immagine del portone si adatta alla nuova dimensione */
+.portone-img {
+    width: 100%;
+    height: auto;
+}
+
+/* --- VERSIONE MOBILE --- */
+@media (max-width: 600px) {
+    .portone-wrapper {
+        max-width: 260px;  /* più piccolo su cellulare */
+    }
+
+    .entra-portone {
+        font-size: 1.6rem; /* riduce la scritta ENTRA */
+        bottom: 25px;
+    }
+}
+/* --- POESIA VERTICALE A DESTRA DEL PORTONE --- */
+.poesia-destra {
+    position: absolute;
+    right: -180px; /* distanza dal portone */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: rgba(243,233,221,0.85);
+    text-align: left;
+    opacity: 0.85;
+    writing-mode: vertical-rl; /* verticale */
+    text-orientation: mixed;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    pointer-events: none; /* non cliccabile */
+}
+
+/* MOBILE: poesia più vicina e più piccola */
+@media (max-width: 600px) {
+    .poesia-destra {
+        right: -100px;
+        font-size: 0.9rem;
+        width: 100px;
+    }
+}

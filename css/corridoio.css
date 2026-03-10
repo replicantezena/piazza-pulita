@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.corridoio-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1a1a1f 0%, #0a0a0d 60%, #000 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 900px;
+}
+
+.pareti {
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, #1b1b20, #111118, #1b1b20);
+    filter: brightness(0.7);
+    transform: translateZ(-200px) scale(1.2);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.9);
+}
+
+.torce {
+    position: absolute;
+    width: 60px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255,180,80,0.8), rgba(255,120,20,0.2), transparent);
+    top: 30%;
+    animation: fiamma 3s infinite ease-in-out;
+}
+
+.torce.sinistra { left: 12%; }
+.torce.destra { right: 12%; }
+
+@keyframes fiamma {
+    0% { filter: blur(6px) brightness(1); }
+    50% { filter: blur(10px) brightness(1.4); }
+    100% { filter: blur(6px) brightness(1); }
+}
+
+.luce-finale {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    background: radial-gradient(circle at center, rgba(255,255,240,0.4), transparent 70%);
+    animation: pulsazione 6s infinite ease-in-out;
+}
+
+@keyframes pulsazione {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.2; }
+}

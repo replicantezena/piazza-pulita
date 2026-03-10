@@ -1,0 +1,143 @@
+/* Sfondo con nebbia */
+.invito-sfondo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../img/nebbia-invito.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+/* Menu superiore */
+.menu-superiore {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-superiore a {
+    margin: 0 0.6rem;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.menu-superiore a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+
+/* Contenitore principale */
+.invito-contenitore {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    color: #f5f5f5;
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* Titoli */
+.invito-contenitore h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.6rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.sottotitolo {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Descrizione */
+.descrizione {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Box codice invito */
+.codice-box {
+    margin: 0 auto;
+    max-width: 420px;
+    padding: 1.8rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 14px rgba(0,0,0,0.5);
+}
+
+.etichetta {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+}
+
+.codice {
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
+/* Istruzioni */
+.istruzioni {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.05rem;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* Pulsante torna */
+.torna-indice {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.torna-indice a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.torna-indice a:hover {
+    background: rgba(255,255,255,0.15);
+    text-shadow: 0 0 10px rgba(255,255,255,1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .invito-contenitore {
+        padding: 1.8rem;
+    }
+
+    .codice {
+        font-size: 1.3rem;
+    }
+
+    .descrizione,
+    .istruzioni {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,146 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    font-family: "Cormorant Garamond", serif;
+    color: #f5f5f5;
+}
+
+/* Nebbia di stanza */
+.stanza-sfondo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../img/nebbia-stanza.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+/* Menu superiore */
+.menu-superiore {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-superiore a {
+    margin: 0 0.6rem;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.menu-superiore a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+
+/* Contenitore stanza */
+.stanza-contenitore {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    box-shadow: 0 0 24px rgba(0,0,0,0.7);
+}
+
+/* Titolo stanza */
+.stanza-contenitore h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.6rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.sottotitolo-stanza {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Area contenuti stanza */
+.stanza-corpo {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+    gap: 2rem;
+}
+
+/* Testo / pensieri */
+.stanza-testo {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    opacity: 0.95;
+}
+
+/* Box dettagli persona */
+.stanza-lato {
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.4rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 14px rgba(0,0,0,0.5);
+    font-size: 0.98rem;
+}
+
+/* Titoletti laterali */
+.stanza-lato h2 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+/* Piccoli elementi tipo lista */
+.stanza-lato ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.4rem 0 0;
+}
+
+.stanza-lato li {
+    margin-bottom: 0.3rem;
+    opacity: 0.9;
+}
+
+/* Pulsante modifica stanza */
+.modifica-stanza-link {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.modifica-stanza-link a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.modifica-stanza-link a:hover {
+    background: rgba(255,255,255,0.15);
+    text-shadow: 0 0 10px rgba(255,255,255,1);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .stanza-contenitore {
+        margin: 3rem 1rem;
+        padding: 1.8rem;
+    }
+
+    .stanza-corpo {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,146 @@
+/* Impostazioni base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    font-family: "Cormorant Garamond", serif;
+    color: #f5f5f5;
+}
+
+/* Nebbia del palazzo della Trasparenza */
+.trasparenza-sfondo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../img/nebbia-trasparenza.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+/* Menu superiore */
+.menu-superiore {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-superiore a {
+    margin: 0 0.6rem;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.menu-superiore a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+
+/* Contenitore principale */
+.trasparenza-contenitore {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    box-shadow: 0 0 24px rgba(0,0,0,0.7);
+}
+
+/* Titolo */
+.trasparenza-contenitore h1 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.6rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.sottotitolo-trasparenza {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Testo principale */
+.testo-trasparenza {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    margin-bottom: 2rem;
+}
+
+/* Sezioni */
+.sezione {
+    margin-bottom: 2rem;
+    padding: 1.6rem;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 14px rgba(0,0,0,0.5);
+}
+
+.sezione h2 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.sezione p {
+    margin: 0.4rem 0;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+/* Liste */
+.sezione ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.6rem 0 0;
+}
+
+.sezione li {
+    margin-bottom: 0.4rem;
+    opacity: 0.9;
+}
+
+/* Pulsante torna */
+.torna-indice {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.torna-indice a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.torna-indice a:hover {
+    background: rgba(255,255,255,0.15);
+    text-shadow: 0 0 10px rgba(255,255,255,1);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .trasparenza-contenitore {
+        margin: 3rem 1rem;
+        padding: 1.8rem;
+    }
+
+    .testo-trasparenza {
+        font-size: 1.05rem;
+    }
+}

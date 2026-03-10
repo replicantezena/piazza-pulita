@@ -1,0 +1,22 @@
+/* Sfondo della piazza a tutto schermo, senza zoom eccessivo */
+.sfondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('piazza.png'); /* la tua immagine perfetta */
+    background-size: cover;              /* riempie senza zoomare troppo */
+    background-position: center;         /* mantiene il soggetto centrale */
+    background-repeat: no-repeat;
+    filter: brightness(0.85);
+    z-index: 1;
+}
+
+/* Mobile: niente zoom, niente tagli */
+@media (max-width: 768px) {
+    .sfondo {
+        background-position: center top; /* mostra più contenuto verticale */
+        background-size: cover;
+    }
+}

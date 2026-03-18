@@ -108,16 +108,11 @@
 
 /* MOBILE */
 @media (max-width: 600px) {
-    .titolo-citta {
-        font-size: 3rem;
-    }
-    .invito {
-        font-size: 1rem;
-    }
-    .promessa {
-        font-size: 0.95rem;
-    }
+    .titolo-citta { font-size: 3rem; }
+    .invito { font-size: 1rem; }
+    .promessa { font-size: 0.95rem; }
 }
+
 /* --- SCRITTA ENTRA SUL PORTONE --- */
 .entra-portone {
     position: absolute;
@@ -132,47 +127,54 @@
     transition: opacity 0.3s ease;
 }
 
-.entra-portone:hover {
-    opacity: 0.7;
-}
+.entra-portone:hover { opacity: 0.7; }
 
-/* --- ANIMAZIONE APERTURA PORTONE --- */
-.portone-aperto {
-    animation: apriPortone 1s forwards ease-out;
-}
-
-@keyframes apriPortone {
-    0% { transform: scale(1) translateY(0); opacity: 1; }
-    100% { transform: scale(1.2) translateY(-40px); opacity: 0; }
-}
-/* --- RIDUZIONE PORTONE --- */
+/* --- PORTONE: DIMENSIONI CORRETTE PER IMMAGINE VERTICALE --- */
 .portone-wrapper {
-    max-width: 380px;   /* riduce la larghezza */
-    margin: 0 auto;     /* lo centra */
-    position: relative;
-}
-
-/* L'immagine del portone si adatta alla nuova dimensione */
-.portone-img {
     width: 100%;
-    height: auto;
+    max-width: 420px;
+    aspect-ratio: 2 / 3;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
-/* --- VERSIONE MOBILE --- */
-@media (max-width: 600px) {
-    .portone-wrapper {
-        max-width: 260px;  /* più piccolo su cellulare */
-    }
+/* --- TRE ANTE DEL PORTONE --- */
+.anta {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 33.33%;
+    background-image: url("../img/portone.png");
 
-    .entra-portone {
-        font-size: 1.6rem; /* riduce la scritta ENTRA */
-        bottom: 25px;
-    }
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    transition: transform 1.2s ease, opacity 1.2s ease;
 }
+
+.sinistra { left: 0; background-position: left center; }
+.centrale { left: 33.33%; background-position: center center; }
+.destra   { left: 66.66%; background-position: right center; }
+
+/* ANIMAZIONE APERTURA */
+.portone-aperto .sinistra { transform: translateX(-120%); opacity: 0; }
+.portone-aperto .destra   { transform: translateX(120%); opacity: 0; }
+.portone-aperto .centrale { transform: scale(0.9) translateY(-20px); opacity: 0; }
+
+/* FADE A NERO */
+.fade-nero {
+    position: fixed;
+    inset: 0;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
 /* --- POESIA VERTICALE A DESTRA DEL PORTONE --- */
 .poesia-destra {
     position: absolute;
-    right: -180px; /* distanza dal portone */
+    right: -180px;
     top: 50%;
     transform: translateY(-50%);
     width: 150px;
@@ -182,11 +184,11 @@
     color: rgba(243,233,221,0.85);
     text-align: left;
     opacity: 0.85;
-    writing-mode: vertical-rl; /* verticale */
+    writing-mode: vertical-rl;
     text-orientation: mixed;
     letter-spacing: 0.05em;
     text-shadow: 0 0 8px rgba(0,0,0,0.6);
-    pointer-events: none; /* non cliccabile */
+    pointer-events: none;
 }
 
 /* MOBILE: poesia più vicina e più piccola */

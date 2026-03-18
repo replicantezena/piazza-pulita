@@ -1,0 +1,124 @@
+/* SFONDO CREPUSCOLARE */
+.index-body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top,
+                                #6b4e2e 0%,
+                                #3a2a1d 40%,
+                                #120e0b 100%);
+                                color: #f3e9dd;
+                                font-family: "Cormorant Garamond", serif;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+}
+
+/* LANERNA */
+.lanterna {
+    position: fixed;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle,
+                                rgba(255,244,214,0.95) 0%,
+                                rgba(255,244,214,0.25) 45%,
+                                transparent 75%);
+    pointer-events: none;
+    filter: blur(2px);
+    opacity: 0.9;
+}
+
+/* PORTONE */
+.portone-wrapper {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 2 / 3;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ANTE */
+.anta {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 33.33%;
+    background-image: url("img/portone.png");
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+.sinistra { left: 0; background-position: left center; }
+.centrale { left: 33.33%; background-position: center center; }
+.destra   { left: 66.66%; background-position: right center; }
+
+/* APERTURA */
+.portone-aperto .sinistra { transform: translateX(-120%); opacity: 0; }
+.portone-aperto .destra   { transform: translateX(120%); opacity: 0; }
+.portone-aperto .centrale { transform: scale(0.9) translateY(-20px); opacity: 0; }
+
+/* SCRITTA ENTRA */
+.entra-portone {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+
+/* LUCE PULSANTE */
+.portone-luce {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255,220,120,0.8), transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    filter: blur(20px);
+}
+
+/* SIMBOLI */
+.simbolo {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.simbolo-sinistra { left: 10%; top: 45%; background-image: url("img/simbolo-stella.png"); }
+.simbolo-centro   { left: 50%; top: 30%; transform: translateX(-50%); background-image: url("img/simbolo-cerchio.png"); }
+.simbolo-destra   { right: 10%; top: 45%; background-image: url("img/simbolo-luna.png"); }
+
+/* POESIA */
+.poesia-destra {
+    position: absolute;
+    right: -180px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    writing-mode: vertical-rl;
+    opacity: 0.85;
+}
+
+/* FADE */
+.fade-nero {
+    position: fixed;
+    inset: 0;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}

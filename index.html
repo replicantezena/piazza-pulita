@@ -2,71 +2,56 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>La Piazza Pulita — Il Portone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un'esperienza interattiva poetica: entra nella città nascosta.">
+    <title>La Città Nascosta</title>
 
-    <style>
-        body {
-            background: black;
-            margin: 0;
-            overflow: hidden;
-            font-family: "Cormorant Garamond", serif;
-        }
+    <!-- Importazione Font (Cormorant Garamond e Great Vibes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 
-        /* Contenitore principale */
-        .piazza {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-        }
-
-        /* Portone grande e centrato */
-        .portone-wrapper {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 650px;
-            height: auto;
-            text-align: center;
-        }
-
-        .portone-img {
-            width: 100%;
-            cursor: pointer; /* così si capisce che è cliccabile */
-            transition: 1s ease;
-        }
-
-        .portone-aperto .portone-img {
-            transform: scale(1.2);
-            opacity: 0;
-        }
-    </style>
+    <!-- Collegamento al CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body class="index-body">
 
-<body>
+    <!-- Effetto lanterna -->
+    <div class="lanterna" aria-hidden="true"></div>
 
-<main class="piazza">
+    <!-- Contenitore Portone Interattivo -->
+    <!-- Aggiunto role="button" e tabindex per accessibilità tastiera -->
+    <div class="portone-wrapper" id="portone" onclick="apriPortone()" role="button" tabindex="0" aria-label="Apri il portone ed entra nel sito">
 
-    <div class="portone-wrapper" id="portone">
+        <!-- Le tre ante -->
+        <div class="anta sinistra" aria-hidden="true"></div>
+        <div class="anta centrale" aria-hidden="true"></div>
+        <div class="anta destra" aria-hidden="true"></div>
 
-        <!-- ⭐ CLICCHI L’IMMAGINE E SI ENTRA ⭐ -->
-        <img class="portone-img" src="portone.png" alt="Portone Antico" onclick="apriPortone()">
+        <!-- Luce dietro il portone -->
+        <div class="portone-luce" aria-hidden="true"></div>
 
+        <!-- Simboli decorativi -->
+        <div class="simbolo simbolo-sinistra" aria-hidden="true"></div>
+        <div class="simbolo simbolo-centro" aria-hidden="true"></div>
+        <div class="simbolo simbolo-destra" aria-hidden="true"></div>
+
+        <!-- Testo "ENTRA" -->
+        <div class="entra-portone">ENTRA</div>
+
+        <!-- Poesia laterale -->
+        <div class="poesia-destra">
+            Le città non esistono<br>
+            finché qualcuno non le apre.<br>
+            Ogni porta è un respiro,<br>
+            ogni varco un destino.
+        </div>
     </div>
 
-</main>
+    <!-- Overlay nero per transizione -->
+    <div class="fade-nero" id="fadeNero" aria-hidden="true"></div>
 
-<script>
-function apriPortone() {
-    const portone = document.getElementById("portone");
-    portone.classList.add("portone-aperto");
-
-    setTimeout(() => {
-        window.location.href = "piazza.html";
-    }, 1000);
-}
-</script>
-
+    <!-- Script JavaScript -->
+    <script src="js/index.js"></script>
 </body>
 </html>
